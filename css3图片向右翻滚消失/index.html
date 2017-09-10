@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/img-show.css">
+	<script src="js/jquery.min.js"></script>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		body{
+			background:#C3CCD5;
+		}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$(".img-row").addClass("imgGo");
+		})
+		setInterval(function(){
+			$(".img-row").removeClass("imgGo");
+			setTimeout(function(){
+				$(".img-row").addClass("imgGo");
+			},200);
+		},18000);
+		var index=0;
+		$(".img-point>li").eq(index).addClass("point");
+		setInterval(function(){
+			index++;
+			if(index==$(".img-point>li").length){
+				index=0;
+			}
+			$(".img-point>li").removeClass("point");
+			$(".img-point>li").eq(index).addClass("point");
+		},2000);	
+	</script>
+</head>
+<body>
+	<div class="img-show">
+		<ul class="img-row D3">
+			<li class="img-col">
+				<img src="images/studio_0001.jpg" title="图片" />
+			</li>
+			<li class="img-col">
+				<img src="images/studio_0002.jpg" title="图片" />
+			</li>
+			<li class="img-col">
+				<img src="images/studio_0003.jpg" title="图片" />
+			</li>
+			<li class="img-col">
+				<img src="images/studio_0004.jpg" title="图片" />
+			</li>
+			<li class="img-col">
+				<img src="images/studio_0005.jpg" title="图片" />
+			</li>
+			<li class="img-col">
+				<img src="images/studio_0006.jpg" title="图片" />
+			</li>
+			<li class="img-col">
+				<img src="images/studio_0007.jpg" title="图片" />
+			</li>
+			<li class="img-col">
+				<img src="images/studio_0008.jpg" title="图片" />
+			</li>
+			<li class="img-col">
+				<img src="images/studio_0009.jpg" title="图片" />
+			</li>
+		</ul>
+		<ul class="img-point">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+</html>
